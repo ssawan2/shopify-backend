@@ -1,7 +1,7 @@
 const Inventory = require("../models/inventory.model");
 
 const createInventory = async(req, res) => {
-
+    console.log(req.body.title)
     if (!req.body.title) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
