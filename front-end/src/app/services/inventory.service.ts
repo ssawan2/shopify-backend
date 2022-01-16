@@ -26,4 +26,8 @@ export class InventoryService {
   delete(id){
     return this.http.delete(`${baseUrl}/${id}`)
   }
+
+  get(id){
+    return this.http.get(`${baseUrl}/${id}`)
+  }
 }

@@ -7,7 +7,7 @@ import { ListInventoryComponent } from './components/list-inventory/list-invento
 const routes: Routes = [
   {path: '', redirectTo: 'inventorys', pathMatch: 'full'},
   {path: 'inventorys', component: ListInventoryComponent},
-  {path: 'inventoys/:id', component: DetailsInventoryComponent},
+  {path: 'inventorys/:id', component: DetailsInventoryComponent},
   {path: 'add', component: AddInventoryComponent}
 ];
 

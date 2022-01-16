@@ -1,1 +1,46 @@
-<p>list-inventory works!</p>
+<!-- <div>
+    <h4>Inventory List</h4>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let inventory of inventorys; let i = index">
+            {{ inventory.title }}
+        </li>
+    </ul>
+    <a class="badge badge-warning" href="/inventorys/{{ currentItem.id }}">
+        Edit
+      </a>
+</div> -->
+
+
+<div class="list row">
+    <div class="col-md-6">
+        <h4>Tutorials List</h4>
+        <ul class="list-group">
+            <li *ngFor="let inventory of inventorys; let i = index" [class.active]="i == currentItem" (click)="currentSelectedInventory(inventory, i)">
+                {{ inventory.title}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentIndex>=0">
+            <h4>Inventory Item </h4>
+            <div>
+                <label><strong>Title:</strong></label> {{ currentItem.title }}
+            </div>
+            <div>
+                <label><strong>Description:</strong></label> {{ currentItem.description }}
+            </div>
+            <div>
+                <label><strong>ID:</strong></label> {{ currentItem._id }}
+            </div>
+
+            <a class="badge badge-warning" href="/inventorys/{{currentItem._id }}">
+          Edit 
+        </a>
+        </div>
+
+        <div *ngIf="!currentItem">
+            <br />
+            <p>Please click on an Item...</p>
+        </div>
+    </div>
+</div>
