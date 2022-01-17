@@ -8,7 +8,9 @@ const createInventory = async(req, res) => {
     }
     const inventory = await Inventory.create({
         title: req.body.title,
+        brand: req.body.brand,
         description: req.body.description,
+        quantity: req.body.quantity,
         published: req.body.published ? req.body.publised : false
     });
 

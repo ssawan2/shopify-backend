@@ -1,13 +1,22 @@
 <div class="addForm">
     <div *ngIf="!submitted">
+
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" required [(ngModel)]="inventory.title" name="title" />
         </div>
 
         <div class="form-group">
+            <label for="brand">Brand</label>
+            <input class="form-control" id="brand" required [(ngModel)]="inventory.brand" name="brand" />
+        </div>
+        <div class="form-group">
             <label for="description">Description</label>
             <input class="form-control" id="description" required [(ngModel)]="inventory.description" name="description" />
+        </div>
+        <div class="form-group">
+            <label for="description">Quantity</label>
+            <input class="form-control" id="quantity" required [(ngModel)]="inventory.quantity" name="quantity" />
         </div>
 
         <button (click)="saveInventory()" class="button">Submit</button>
@@ -17,4 +26,7 @@
         <h4>You submitted successfully!</h4>
         <button class="btn btn-success" (click)="newTutorial()">Add</button>
     </div>
+
+
+
 </div>

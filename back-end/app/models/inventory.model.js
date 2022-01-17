@@ -4,8 +4,9 @@ const Inventory = mongoose.model(
     "inventories",
     mongoose.Schema({
         title: String,
+        brand: String,
         description: String,
-        published: Boolean
+        quantity: String
     }, { timestamps: true })
 );
 module.exports = Inventory;

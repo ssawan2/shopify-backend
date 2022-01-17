@@ -11,8 +11,9 @@ export class AddInventoryComponent implements OnInit {
 
   inventory ={
     title: '',
+    brand:'',
     description: '',
-    published: false
+    quantity: ''
   };
 
   submitted = false;
@@ -26,7 +27,9 @@ export class AddInventoryComponent implements OnInit {
   saveInventory(){
     const data = {
       title: this.inventory.title,
-      description: this.inventory.description
+      brand: this.inventory.brand,
+      description: this.inventory.description,
+      quantity: this.inventory.quantity
     }
 
     this.inventoryService.create(data)
@@ -47,8 +50,9 @@ export class AddInventoryComponent implements OnInit {
     this.submitted = false;
     this.inventory ={
       title: this.inventory.title,
+      brand: this.inventory.brand,
       description: this.inventory.description,
-      published: false
+      quantity: this.inventory.quantity
     }
   }
 

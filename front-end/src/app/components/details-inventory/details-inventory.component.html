@@ -6,8 +6,16 @@
             <input type="text" class="formText" id="title" [(ngModel)]="currentItem.title" name="title" />
         </div>
         <div class="form">
+            <label for="brand">Brand</label>
+            <input type="text" class="formText" id="brand" [(ngModel)]="currentItem.brand" name="brand" />
+        </div>
+        <div class="form">
             <label for="description">Description</label>
             <input type="text" id="description" [(ngModel)]="currentItem.description" name="description" />
+        </div>
+        <div class="form">
+            <label for="quantity">Quantity</label>
+            <input type="text" class="formText" id="quantity" [(ngModel)]="currentItem.quantity" name="quantity" />
         </div>
     </form>
 
