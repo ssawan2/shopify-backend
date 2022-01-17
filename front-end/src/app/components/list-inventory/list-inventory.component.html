@@ -52,4 +52,14 @@
             <p>Please click on an Item...</p>
         </div>
     </div>
+    <div>
+        <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="searchByTitle()">
+          Search By Title
+        </button>
+        </div>
+    </div>
+
+
 </div>

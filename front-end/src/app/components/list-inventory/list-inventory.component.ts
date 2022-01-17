@@ -39,6 +39,21 @@ export class ListInventoryComponent implements OnInit {
     this.currentIndex = -1;
   }
 
+  searchByTitle():void{
+    this.currentIndex =-1;
+    this.currentItem = {};
+
+    this.inventoryService.findByTitle(this.title)
+    .subscribe(
+      data =>{
+        this.inventorys = data;
+        console.log(data);
+      },
+      error =>{
+        console.log(error);
+      }
+    )
+  }
 
   currentSelectedInventory(item, index){
     console.log("hello")
@@ -48,3 +63,4 @@ export class ListInventoryComponent implements OnInit {
     this.currentIndex = index;
   }
 }
+

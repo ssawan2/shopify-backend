@@ -30,4 +30,8 @@ export class InventoryService {
   get(id){
     return this.http.get(`${baseUrl}/${id}`)
   }
+
+  findByTitle(title){
+    return this.http.get(`${baseUrl}?title=${title}`)
+  }
 }

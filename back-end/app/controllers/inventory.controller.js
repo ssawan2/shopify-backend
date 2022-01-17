@@ -121,16 +121,4 @@ const deleteAllInventory = (req, res) => {
 
 };
 
-const findAllPublishedInventorys = (req, res) => {
-    Inventory.find({ published: true })
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while retrieving inventorys."
-            });
-        });
-
-};
-module.exports = { createInventory, findAllInventory, findOneInventory, deleteInventory, findAllPublishedInventorys, deleteAllInventory, updateInventory }
+module.exports = { createInventory, findAllInventory, findOneInventory, deleteInventory, deleteAllInventory, updateInventory }
