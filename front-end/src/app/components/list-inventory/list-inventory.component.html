@@ -11,29 +11,32 @@
 </div> -->
 
 
-<div class="list row">
-    <div class="col-md-6">
+<div class="floatCont">
+    <div class="floatChild">
         <h4>Tutorials List</h4>
-        <ul class="list-group">
+        <ul class="listOfItems">
             <li *ngFor="let inventory of inventorys; let i = index" [class.active]="i == currentItem" (click)="currentSelectedInventory(inventory, i)">
                 {{ inventory.title}}
             </li>
         </ul>
     </div>
-    <div class="col-md-6">
+    <div class="floatChild">
         <div *ngIf="currentIndex>=0">
             <h4>Inventory Item </h4>
-            <div>
-                <label><strong>Title:</strong></label> {{ currentItem.title }}
-            </div>
-            <div>
-                <label><strong>Description:</strong></label> {{ currentItem.description }}
-            </div>
-            <div>
-                <label><strong>ID:</strong></label> {{ currentItem._id }}
+
+            <div class="hellos">
+                <div>
+                    <label><strong>Title:</strong></label> {{ currentItem.title }}
+                </div>
+                <div>
+                    <label><strong>Description:</strong></label> {{ currentItem.description }}
+                </div>
+                <div>
+                    <label><strong>ID:</strong></label> {{ currentItem._id }}
+                </div>
             </div>
 
-            <a class="badge badge-warning" href="/inventorys/{{currentItem._id }}">
+            <a class="button" href="/inventorys/{{currentItem._id}}">
           Edit 
         </a>
         </div>

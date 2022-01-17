@@ -1,4 +1,4 @@
-<div class="submit-form">
+<div class="addForm">
     <div *ngIf="!submitted">
         <div class="form-group">
             <label for="title">Title</label>
@@ -10,7 +10,7 @@
             <input class="form-control" id="description" required [(ngModel)]="inventory.description" name="description" />
         </div>
 
-        <button (click)="saveInventory()" class="btn btn-success">Submit</button>
+        <button (click)="saveInventory()" class="button">Submit</button>
     </div>
 
     <div *ngIf="submitted">
