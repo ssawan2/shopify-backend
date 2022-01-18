@@ -23,7 +23,7 @@ router.get("/brand/:brand", inventorys.findAllInventoryByBrand)
 // Filter by brand
 router.get("/description/:description", inventorys.findAllInventoryByDescription)
 
-//Filter by quantity 
+// Filter by quantity 
 router.get("/quantity/:quantity", inventorys.findAllInventoryByQuantity)
 
 module.exports = router

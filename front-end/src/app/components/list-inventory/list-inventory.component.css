@@ -20,6 +20,10 @@
     padding: 20px;
 }
 
-.hellos {
+.itemDisplay {
     background-color: rgb(212, 253, 231);
+}
+
+.filterBy {
+    align-items: center;
 }

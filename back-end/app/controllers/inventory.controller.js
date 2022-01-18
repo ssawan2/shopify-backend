@@ -166,4 +166,14 @@ const findAllInventoryByQuantity = async(req, res) => {
 }
 
 
-module.exports = { createInventory, findAllInventory, findOneInventory, deleteInventory, deleteAllInventory, updateInventory, findAllInventoryByBrand, findAllInventoryByDescription, findAllInventoryByQuantity }
+module.exports = {
+    createInventory,
+    findAllInventory,
+    findOneInventory,
+    deleteInventory,
+    deleteAllInventory,
+    updateInventory,
+    findAllInventoryByBrand,
+    findAllInventoryByDescription,
+    findAllInventoryByQuantity
+}
