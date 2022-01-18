@@ -121,6 +121,7 @@ const deleteAllInventory = (req, res) => {
 
 const findAllInventoryByBrand = async(req, res) => {
     const brand = req.params.brand;
+    console.log("Controller:findAllInventoryByBrand:  " + brand)
     var condition = brand ? { brand: { $regex: new RegExp(brand) } } : {};
 
     Inventory.find(condition)
