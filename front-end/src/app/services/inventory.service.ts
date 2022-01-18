@@ -34,4 +34,16 @@ export class InventoryService {
   findByTitle(title){
     return this.http.get(`${baseUrl}?title=${title}`)
   }
+
+  find(brand){
+    return this.http.get(`${baseUrl}brand/${brand}`)
+  }
+
+  findByDescription(description){
+    return this.http.get(`${baseUrl}description/${description}`)
+  }
+
+  findByQuantity(quantity){
+    return this.http.get(`${baseUrl}quantity/${quantity}`)
+  }
 }

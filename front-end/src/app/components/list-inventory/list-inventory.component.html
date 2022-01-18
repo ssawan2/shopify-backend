@@ -61,5 +61,31 @@
         </div>
     </div>
 
+    <div>
+        <input type="text" class="form-control" placeholder="Search by brand" [(ngModel)]="brand" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="getBrand()">
+          Search By Brand
+        </button>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" class="form-control" placeholder="Search by description" [(ngModel)]="description" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="getDescription()">
+              Search By Description
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" class="form-control" placeholder="Search by quantity" [(ngModel)]="quantity" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="getQuantity()">
+              Search By Quantity
+            </button>
+        </div>
+    </div>
 
 </div>

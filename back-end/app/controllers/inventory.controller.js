@@ -26,6 +26,8 @@ const createInventory = async(req, res) => {
 // Retrieve all inventorys from the database.
 const findAllInventory = async(req, res) => {
     const title = req.query.title;
+
+    console.log("Controller: findAllInventory " + title)
     var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
 
     Inventory.find(condition)
@@ -121,4 +123,52 @@ const deleteAllInventory = (req, res) => {
 
 };
 
-module.exports = { createInventory, findAllInventory, findOneInventory, deleteInventory, deleteAllInventory, updateInventory }
+const findAllInventoryByBrand = async(req, res) => {
+    const brand = req.params.brand;
+    console.log("Controller:findAllInventoryByBrand:  " + brand)
+    var condition = brand ? { brand: { $regex: new RegExp(brand) } } : {};
+
+    Inventory.find(condition)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving inventory."
+            });
+        });
+
+};
+
+const findAllInventoryByDescription = async(req, res) => {
+    const description = req.params.description;
+    var condition = description ? { description: { $regex: new RegExp(description) } } : {};
+
+    Inventory.find(condition)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving inventory."
+            });
+        });
+}
+
+const findAllInventoryByQuantity = async(req, res) => {
+    const quantity = req.params.quantity;
+    var condition = quantity ? { quantity: { $regex: new RegExp(quantity) } } : {};
+
+    Inventory.find(condition)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving inventory."
+            });
+        });
+}
+
+
+module.exports = { createInventory, findAllInventory, findOneInventory, deleteInventory, deleteAllInventory, updateInventory, findAllInventoryByBrand, findAllInventoryByDescription, findAllInventoryByQuantity }

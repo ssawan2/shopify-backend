@@ -11,7 +11,10 @@ export class ListInventoryComponent implements OnInit {
   inventorys: any;
   currentItem = null;
   currentIndex = -1;
-  title= ''
+  title= '';
+  brand='';
+  description='';
+  quantity ='';
   
   constructor(private inventoryService: InventoryService) { }
 
@@ -43,6 +46,8 @@ export class ListInventoryComponent implements OnInit {
     this.currentIndex =-1;
     this.currentItem = {};
 
+    console.log("getTitle: "+ this.title)
+
     this.inventoryService.findByTitle(this.title)
     .subscribe(
       data =>{
@@ -61,6 +66,54 @@ export class ListInventoryComponent implements OnInit {
     console.log(index)
     this.currentItem = item;
     this.currentIndex = index;
+  }
+
+  getBrand(){
+    console.log("getBrand: "+this.brand)
+    this.currentIndex =-1;
+    this.currentItem = {};
+
+    this.inventoryService.find(this.brand)
+    .subscribe(
+      data =>{
+        this.inventorys = data;
+        console.log(data);
+      },
+      error =>{
+        console.log(error);
+      }
+    )
+  }
+  getDescription(){
+    this.currentIndex =-1;
+    this.currentItem = {};
+
+    this.inventoryService.findByDescription(this.description)
+    .subscribe(
+      data =>{
+        this.inventorys = data;
+        console.log(data);
+      },
+      error =>{
+        console.log(error);
+      }
+    )
+  }
+
+  getQuantity(){
+    this.currentIndex =-1;
+    this.currentItem = {};
+
+    this.inventoryService.findByQuantity(this.quantity)
+    .subscribe(
+      data =>{
+        this.inventorys = data;
+        console.log(data);
+      },
+      error =>{
+        console.log(error);
+      }
+    )
   }
 }
 

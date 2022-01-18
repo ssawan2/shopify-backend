@@ -17,5 +17,13 @@ router.put("/:id", inventorys.updateInventory);
 // Delete a inventorys with id
 router.delete("/:id", inventorys.deleteInventory);
 
+// Filter by brand
+router.get("/brand/:brand", inventorys.findAllInventoryByBrand)
+
+// Filter by brand
+router.get("/description/:description", inventorys.findAllInventoryByDescription)
+
+//Filter by quantity 
+router.get("/quantity/:quantity", inventorys.findAllInventoryByQuantity)
 
 module.exports = router
