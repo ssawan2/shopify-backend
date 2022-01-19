@@ -1,5 +1,6 @@
 const Inventory = require("../models/inventory.model");
 
+//to create a new item in the inventory 
 const createInventory = async(req, res) => {
     if (!req.body.title) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -56,7 +57,7 @@ const findOneInventory = async(req, res) => {
 
 };
 
-
+//Updating an inventory item 
 const updateInventory = (req, res) => {
     if (!req.body) {
         return res.status(400).send({
@@ -81,7 +82,7 @@ const updateInventory = (req, res) => {
         });
 };
 
-
+//Deleting a single inventory item 
 const deleteInventory = (req, res) => {
     const id = req.params.id;
 
@@ -104,21 +105,7 @@ const deleteInventory = (req, res) => {
         });
 };
 
-const deleteAllInventory = (req, res) => {
-    Inventory.deleteMany({})
-        .then(data => {
-            res.send({
-                message: `${data.deletedCount} inventorys were deleted successfully!`
-            });
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred while removing all inventorys."
-            });
-        });
-
-};
-
+//Fitering the inventorys by Brand 
 const findAllInventoryByBrand = async(req, res) => {
     const brand = req.params.brand;
     var condition = brand ? { brand: { $regex: new RegExp(brand) } } : {};
@@ -135,6 +122,7 @@ const findAllInventoryByBrand = async(req, res) => {
 
 };
 
+//Fitering the inventorys by Description 
 const findAllInventoryByDescription = async(req, res) => {
     const description = req.params.description;
     var condition = description ? { description: { $regex: new RegExp(description) } } : {};
@@ -150,6 +138,7 @@ const findAllInventoryByDescription = async(req, res) => {
         });
 }
 
+//Fitering the inventorys by Quantity  
 const findAllInventoryByQuantity = async(req, res) => {
     const quantity = req.params.quantity;
     var condition = quantity ? { quantity: { $regex: new RegExp(quantity) } } : {};
@@ -171,7 +160,6 @@ module.exports = {
     findAllInventory,
     findOneInventory,
     deleteInventory,
-    deleteAllInventory,
     updateInventory,
     findAllInventoryByBrand,
     findAllInventoryByDescription,

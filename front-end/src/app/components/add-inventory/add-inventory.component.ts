@@ -8,7 +8,6 @@ import { InventoryService } from 'src/app/services/inventory.service';
 })
 export class AddInventoryComponent implements OnInit {
 
-
   inventory ={
     title: '',
     brand:'',
@@ -21,9 +20,9 @@ export class AddInventoryComponent implements OnInit {
   constructor(private inventoryService: InventoryService) {   }
 
   ngOnInit(): void {
-  
   }
 
+  //to save 
   saveInventory(){
     const data = {
       title: this.inventory.title,
@@ -46,6 +45,7 @@ export class AddInventoryComponent implements OnInit {
     console.log(data)
   }
 
+  //to add new inventory 
   newInventory(){
     this.submitted = false;
     this.inventory ={

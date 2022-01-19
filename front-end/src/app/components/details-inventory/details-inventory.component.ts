@@ -12,7 +12,6 @@ export class DetailsInventoryComponent implements OnInit {
   currentItem =  null;
   message ='';
 
-  
   constructor(
     private inventoryService: InventoryService,
     private route: ActivatedRoute,
@@ -25,6 +24,7 @@ export class DetailsInventoryComponent implements OnInit {
 
   }
 
+  //getting the information for a single item by idea
   getItem(id){
     this.inventoryService.get(id)
     .subscribe(
@@ -38,6 +38,7 @@ export class DetailsInventoryComponent implements OnInit {
     )
   }
 
+  //updating a single item 
   updateItem(){
     this.inventoryService.update(this.currentItem._id, this.currentItem)
     .subscribe(
@@ -51,6 +52,7 @@ export class DetailsInventoryComponent implements OnInit {
     )
   }
 
+  //deleting a single item 
   deleteItem(){
     this.inventoryService.delete(this.currentItem._id)
     .subscribe(

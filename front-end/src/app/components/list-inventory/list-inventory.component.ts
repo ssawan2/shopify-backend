@@ -19,10 +19,11 @@ export class ListInventoryComponent implements OnInit {
   constructor(private inventoryService: InventoryService) { }
 
   ngOnInit(): void {
+    //will load this first 
     this.listInventory();
-
   }
 
+  //to list all the inventory items
   listInventory(){
     this.inventoryService.getAll()
     .subscribe(
@@ -36,17 +37,17 @@ export class ListInventoryComponent implements OnInit {
     )
   }
 
+  //to refresh 
   refreshList() {
     this.listInventory();
     this.currentItem = null;
     this.currentIndex = -1;
   }
 
+  //Filter by title 
   searchByTitle():void{
     this.currentIndex =-1;
     this.currentItem = {};
-
-    console.log("getTitle: "+ this.title)
 
     this.inventoryService.findByTitle(this.title)
     .subscribe(
@@ -60,16 +61,14 @@ export class ListInventoryComponent implements OnInit {
     )
   }
 
+  //retreving the current selected item 
   currentSelectedInventory(item, index){
-    console.log("hello")
-    console.log(item)
-    console.log(index)
     this.currentItem = item;
     this.currentIndex = index;
   }
 
+  //filtering by brand 
   getBrand(){
-    console.log("getBrand: "+this.brand)
     this.currentIndex =-1;
     this.currentItem = {};
 
@@ -84,6 +83,8 @@ export class ListInventoryComponent implements OnInit {
       }
     )
   }
+
+  //filtering by description 
   getDescription(){
     this.currentIndex =-1;
     this.currentItem = {};
@@ -100,6 +101,7 @@ export class ListInventoryComponent implements OnInit {
     )
   }
 
+  //filtering by quantity 
   getQuantity(){
     this.currentIndex =-1;
     this.currentItem = {};
