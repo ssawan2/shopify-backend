@@ -13,7 +13,7 @@
 
 <div class="floatCont">
     <div class="floatChild">
-        <h4>Tutorials List</h4>
+        <h3>Inventory List</h3>
         <ul class="listOfItems">
             <li *ngFor="let inventory of inventorys; let i = index" [class.active]="i == currentItem" (click)="currentSelectedInventory(inventory, i)">
                 {{ inventory.title}}
@@ -22,7 +22,7 @@
     </div>
     <div class="floatChild">
         <div *ngIf="currentIndex>=0">
-            <h4>Inventory Item </h4>
+            <h3>Inventory Item </h3>
 
             <div class="itemDisplay">
                 <div>
@@ -49,14 +49,16 @@
 
         <div *ngIf="!currentItem">
             <br />
+            <h3 class="startIItem">Inventory Item </h3>
             <p>Please click on an Item...</p>
         </div>
     </div>
-    <div class="filterBy">
-        <div>
+    <div class="floatChild">
+        <h3 class="filterTitle">Filters:</h3>
+        <div class="filterBy">
             <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" (click)="searchByTitle()">
+                <button class="filterButton" type="button" (click)="searchByTitle()">
               Search By Title
             </button>
             </div>
@@ -65,7 +67,7 @@
         <div>
             <input type="text" class="form-control" placeholder="Search by brand" [(ngModel)]="brand" />
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" (click)="getBrand()">
+                <button class="filterButton" type="button" (click)="getBrand()">
               Search By Brand
             </button>
             </div>
@@ -74,7 +76,7 @@
         <div>
             <input type="text" class="form-control" placeholder="Search by description" [(ngModel)]="description" />
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" (click)="getDescription()">
+                <button class="filterButton" type="button" (click)="getDescription()">
                   Search By Description
                 </button>
             </div>
@@ -83,7 +85,7 @@
         <div>
             <input type="text" class="form-control" placeholder="Search by quantity" [(ngModel)]="quantity" />
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" (click)="getQuantity()">
+                <button class="filterButton" type="button" (click)="getQuantity()">
                   Search By Quantity
                 </button>
             </div>

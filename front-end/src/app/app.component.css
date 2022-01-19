@@ -1,0 +1,13 @@
+.navBar {
+    background-color: rgb(212, 253, 231);
+}
+
+a {
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    margin-bottom: 5px;
+}

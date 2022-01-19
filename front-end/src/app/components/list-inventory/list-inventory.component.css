@@ -27,3 +27,20 @@
 .filterBy {
     align-items: center;
 }
+
+.filterButton {
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+    border-right: 0;
+    font-size: px;
+    background-color: grey grey;
+}
+
+.startIItem {
+    margin-top: 0px;
+}
+
+h3 {
+    margin-bottom: 5px;
+}

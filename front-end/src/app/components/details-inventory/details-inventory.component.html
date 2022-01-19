@@ -1,5 +1,5 @@
 <div *ngIf="currentItem" class="list">
-    <h4>Tutorial</h4>
+    <h3>Inventory</h3>
     <form>
         <div class="form">
             <label for="title">Title</label>
@@ -19,11 +19,11 @@
         </div>
     </form>
 
-    <button class="button" (click)="deleteItem()">
+    <button class="buttonDelete" (click)="deleteItem()">
       Delete
     </button>
 
-    <button type="submit" class="button" (click)="updateItem()">
+    <button type="submit" class="buttonUpdate" (click)="updateItem()">
       Update
     </button>
     <p>{{ message }}</p>
@@ -31,5 +31,5 @@
 
 <div *ngIf="!currentItem">
     <br />
-    <p>Cannot access this Tutorial...</p>
+    <p>Cannot access this Inventory...</p>
 </div>
